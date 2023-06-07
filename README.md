@@ -1,7 +1,8 @@
 # GameJam
-## Requierments 
 
-Our game will be a top-down maze escape with the goal of finding a room to unlock within the required time available. There will be artifacts to find throughout the map to unlock the door. Player will have a small spotlight shined on top of them that will follow the camera and when artifacts are collected, spotlight will grow in size. 
+## Requierments 
+Create a small top down 2d escape game, with around 5 minutes of gameplay.
 
 ## Scope 
-We aim to make a game that will 
+We aim to make an escape game, the user will be placed in a maze where they have to find all the pickups to unlock the maze and escape.
+The user will only see an orb of light around them, as they get more pickups the orb of light will grow larger making visibilty easier.
