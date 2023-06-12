@@ -38,25 +38,19 @@ public class PlayerMovement : MonoBehaviour
             gameObject.GetComponent<SpriteRenderer>().flipX = false;  // Reset sprite flip
         }
 
-        // Update the current tile position
-        Vector3Int newTilePosition = tilemap.WorldToCell(transform.position);  // Convert world position to tile position
-        if (newTilePosition != currentTilePosition)  // Check if the player has moved to a new tile
-        {
-            // Check if the new tile is a path tile
-            if (tilemap.GetTile(newTilePosition) == pathTile)
-            {
-                currentTilePosition = newTilePosition;  // Update the current tile position
-            }
-            else
-            {
-                // Prevent the player from moving to non-path tiles
-                transform.position = tilemap.GetCellCenterWorld(currentTilePosition);  // Reset player position to the center of the current tile
-            }
-        }
-    }
+        // Calculate the target position based on current position and movement
+        Vector3 targetPosition = transform.position + new Vector3(movement.x, movement.y, 0f) * moveSpeed * Time.deltaTime;
 
-    private void FixedUpdate()
-    {
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);  // Move the player using physics in FixedUpdate
+        // Convert target position to tile position
+        Vector3Int targetTilePosition = tilemap.WorldToCell(targetPosition);
+
+        // Check if the target tile is a path tile
+        if (tilemap.GetTile(targetTilePosition) == pathTile)
+        {
+            // Update the current tile position
+            currentTilePosition = targetTilePosition;
+            // Move the player to the target position
+            transform.position = targetPosition;
+        }
     }
 }
