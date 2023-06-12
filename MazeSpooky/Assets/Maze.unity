@@ -179,6 +179,8 @@ MonoBehaviour:
   moveSpeed: 5
   rb: {fileID: 467806702}
   animator: {fileID: 467806700}
+  tilemap: {fileID: 645396036}
+  pathTile: {fileID: 11400000, guid: 335e69742eb8e46a491c68a608b0a638, type: 2}
 --- !u!50 &467806702
 Rigidbody2D:
   serializedVersion: 4
@@ -260,7 +262,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 467806699}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0.5, y: 2.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
