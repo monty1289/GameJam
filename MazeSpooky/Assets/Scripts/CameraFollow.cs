@@ -13,10 +13,13 @@ public class CameraFollow : MonoBehaviour
         mainCamera = Camera.main;
     }
 
-    private void FixedUpdate()
+    private void LateUpdate()
     {
+        if (player == null)
+            return;
+
         Vector3 desiredPosition = player.position + offset;
-        Vector3 smoothedPosition = Vector3.Lerp(mainCamera.transform.position, desiredPosition, smoothSpeed * Time.fixedDeltaTime);
+        Vector3 smoothedPosition = Vector3.Lerp(mainCamera.transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
         mainCamera.transform.position = smoothedPosition;
     }
 }
