@@ -6,7 +6,8 @@ public class CameraFollow : MonoBehaviour
     public float smoothSpeed = 0.5f; // The speed at which the camera follows the player
     public Vector3 offset; // The offset between the camera and the player
 
-    public GameObject spotlight; // Reference to the spotlight GameObject    
+    public GameObject spotlight; // Reference to the spotlight GameObject  
+     
 
     private Camera mainCamera; // Reference to the main camera
 
@@ -32,5 +33,9 @@ public class CameraFollow : MonoBehaviour
             // Set the position of the spotlight to match the player's position
             spotlight.transform.position = player.position;
         } 
-    }       
+
+
+    } 
+
+       
 }
