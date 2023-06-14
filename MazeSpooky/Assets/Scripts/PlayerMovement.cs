@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,10 +11,12 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;                // Reference to the Animator component
     public Tilemap tilemap;                  // Reference to the Tilemap component
     public TileBase pathTile;                // Tile representing the valid path
+    public int lightValue;
 
     private Vector3Int currentTilePosition;  // Current tile position of the player
 
     Vector2 movement;                        // Movement vector for the player
+
 
     private void Start()
     {
@@ -52,5 +55,6 @@ public class PlayerMovement : MonoBehaviour
             // Move the player to the target position
             transform.position = targetPosition;
         }
+        Debug.Log("LightValue = " + lightValue);
     }
 }
