@@ -5,7 +5,7 @@ public class Hints : MonoBehaviour
 {
     public TileBase specialTile; // TileBase for the special tile
     public int maxSpecialTiles = 40; // Maximum number of special tiles the player can place
-    private int specialTileCount = 0; // Current number of placed special tiles
+    public int specialTileCount = 0; // Current number of placed special tiles
 
     public Tilemap tilemap; // Reference to the Tilemap game object
     public Transform playerTransform; // Reference to the player's transform
