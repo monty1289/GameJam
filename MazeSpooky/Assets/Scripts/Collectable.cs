@@ -6,6 +6,7 @@ public class Collectable : MonoBehaviour
     public int lightValue = 1;
     public AudioClip clip;
     public GameObject player;
+    public GameObject door;    
     public GameObject spotlight;
     private float decreaseRate = 0.02f; // Rate at which the spotlight decreases in size per second
     public Image image;
@@ -41,6 +42,7 @@ public class Collectable : MonoBehaviour
         {
             player.GetComponent<PlayerMovement>().lightValue += lightValue;
             AudioManager.Instance.Play(clip, player.transform);
+            door.GetComponent<Door>().GemCount+= 8;
             UnityEngine.Rendering.Universal.Light2D light2D = spotlight.GetComponent<UnityEngine.Rendering.Universal.Light2D>();
 
             if (light2D != null)
