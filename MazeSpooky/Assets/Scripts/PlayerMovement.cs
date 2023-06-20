@@ -55,6 +55,6 @@ public class PlayerMovement : MonoBehaviour
             // Move the player to the target position
             transform.position = targetPosition;
         }
-        Debug.Log("LightValue = " + lightValue);
+
     }
 }

@@ -7,6 +7,7 @@ public class Collectable : MonoBehaviour
     public int lightValue = 1;
     public AudioClip clip;
     public GameObject player;
+    public GameObject door;
 
     public void OnTriggerEnter2D(Collider2D other){
 
@@ -14,6 +15,7 @@ public class Collectable : MonoBehaviour
         {
             player.GetComponent<PlayerMovement>().lightValue += lightValue;
             AudioManager.Instance.Play(clip, player.transform);
+            door.GetComponent<Door>().GemCount+= 8;
             Destroy(gameObject);
         }
     }
