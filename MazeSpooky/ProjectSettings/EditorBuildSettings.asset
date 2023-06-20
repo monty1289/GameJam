@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PlayerMovement.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 6853c9ac7bf9b4024bb342683a288011
+  - enabled: 1
+    path: Assets/Scenes/Maze.unity
+    guid: 8e7a38a10b75f4b199b63caf63e74ce8
   m_configObjects: {}
