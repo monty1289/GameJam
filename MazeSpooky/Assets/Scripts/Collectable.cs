@@ -29,8 +29,8 @@ public class Collectable : MonoBehaviour
             // Increase the spotlight's outer radius
             if (light2D != null)
             {
-                light2D.pointLightOuterRadius += 1.5f;
-                light2D.pointLightInnerRadius += 1.5f;
+                light2D.pointLightOuterRadius += 2f;
+                light2D.pointLightInnerRadius += 2f;
             }
 
             Destroy(gameObject);

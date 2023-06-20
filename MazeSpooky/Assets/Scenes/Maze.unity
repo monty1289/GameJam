@@ -318,6 +318,7 @@ MonoBehaviour:
   lightValue: 1
   clip: {fileID: 8300000, guid: 8037167392081db45b51cf7d3bc26c28, type: 3}
   player: {fileID: 467806699}
+  spotlight: {fileID: 566261514}
 --- !u!61 &420604604
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -753,6 +754,7 @@ MonoBehaviour:
   lightValue: 1
   clip: {fileID: 8300000, guid: 8037167392081db45b51cf7d3bc26c28, type: 3}
   player: {fileID: 467806699}
+  spotlight: {fileID: 566261514}
 --- !u!61 &533092595
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -880,6 +882,7 @@ MonoBehaviour:
   lightValue: 1
   clip: {fileID: 8300000, guid: 8037167392081db45b51cf7d3bc26c28, type: 3}
   player: {fileID: 467806699}
+  spotlight: {fileID: 566261514}
 --- !u!61 &542311617
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1105,8 +1108,8 @@ MonoBehaviour:
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 1.46
-  m_PointLightOuterRadius: 2.57
+  m_PointLightInnerRadius: 3.7299898
+  m_PointLightOuterRadius: 4.90585
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -1124,7 +1127,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 566261514}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.022490105, w: 0.9997471}
   m_LocalPosition: {x: 0.55, y: 2.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1181,6 +1184,7 @@ MonoBehaviour:
   lightValue: 1
   clip: {fileID: 8300000, guid: 8037167392081db45b51cf7d3bc26c28, type: 3}
   player: {fileID: 467806699}
+  spotlight: {fileID: 566261514}
 --- !u!61 &633604983
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -83948,6 +83952,7 @@ MonoBehaviour:
   lightValue: 1
   clip: {fileID: 8300000, guid: 8037167392081db45b51cf7d3bc26c28, type: 3}
   player: {fileID: 467806699}
+  spotlight: {fileID: 566261514}
 --- !u!61 &691186535
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -84397,6 +84402,7 @@ MonoBehaviour:
   lightValue: 1
   clip: {fileID: 8300000, guid: 8037167392081db45b51cf7d3bc26c28, type: 3}
   player: {fileID: 467806699}
+  spotlight: {fileID: 566261514}
 --- !u!61 &1257794639
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -84825,6 +84831,7 @@ MonoBehaviour:
   lightValue: 1
   clip: {fileID: 8300000, guid: 8037167392081db45b51cf7d3bc26c28, type: 3}
   player: {fileID: 467806699}
+  spotlight: {fileID: 566261514}
 --- !u!61 &1706775081
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -84952,6 +84959,7 @@ MonoBehaviour:
   lightValue: 1
   clip: {fileID: 8300000, guid: 8037167392081db45b51cf7d3bc26c28, type: 3}
   player: {fileID: 467806699}
+  spotlight: {fileID: 566261514}
 --- !u!61 &1864192510
 BoxCollider2D:
   m_ObjectHideFlags: 0
