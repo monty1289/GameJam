@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class Collectable : MonoBehaviour
 {
@@ -6,6 +7,9 @@ public class Collectable : MonoBehaviour
     public AudioClip clip;
     public GameObject player;
     public GameObject spotlight;
+    public Transform MaxScore;
+    public int score = 0;
+    public TMP_Text scoreText;
     private float decreaseRate = 0.02f; // Rate at which the spotlight decreases in size per second
 
     private UnityEngine.Rendering.Universal.Light2D light2D;
@@ -17,6 +21,7 @@ public class Collectable : MonoBehaviour
         light2D = spotlight.GetComponent<UnityEngine.Rendering.Universal.Light2D>();
         initialOuterRadius = light2D.pointLightOuterRadius;
         initialInnerRadius = light2D.pointLightInnerRadius;
+        UpdateScoreText();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -34,6 +39,8 @@ public class Collectable : MonoBehaviour
             }
 
             Destroy(gameObject);
+            score++;
+            UpdateScoreText();
         }
     }
 
@@ -48,5 +55,10 @@ public class Collectable : MonoBehaviour
             light2D.pointLightOuterRadius = Mathf.Clamp(newOuterRadius, 0f, initialOuterRadius);
             light2D.pointLightInnerRadius = Mathf.Clamp(newInnerRadius, 0f, initialInnerRadius);
         }
+    }
+
+      private void UpdateScoreText()
+    {
+        scoreText.text = "Gems: " + score.ToString() + "/" + MaxScore.childCount.ToString();
     }
 }
