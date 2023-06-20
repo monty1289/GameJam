@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+using System.Collections;
+using System.Collections.Generic;
+
 public class Collectable : MonoBehaviour
 {
     public int lightValue = 1;
@@ -41,19 +44,27 @@ public class Collectable : MonoBehaviour
         {
             player.GetComponent<PlayerMovement>().lightValue += lightValue;
             AudioManager.Instance.Play(clip, player.transform);
+            UnityEngine.Rendering.Universal.Light2D light2D = spotlight.GetComponent<UnityEngine.Rendering.Universal.Light2D>();
 
-            // Increase the spotlight's outer radius
             if (light2D != null)
             {
                 light2D.pointLightOuterRadius += 2f;
-                light2D.pointLightInnerRadius += 2f;                
+                light2D.pointLightInnerRadius += 2f;             
             }
 
             Destroy(gameObject);
         }
     }
 
-    private void Update()
+    // Start is called before the first frame update
+    void Start()
+    {
+
+    }
+
+
+    // Update is called once per frame
+    void Update()
     {
         Debug.Log("Outer Radius: " + light2D.pointLightOuterRadius);
         // Decrease the spotlight's inner and outer radius over time
@@ -76,3 +87,4 @@ public class Collectable : MonoBehaviour
         }
     }
 }
+
