@@ -1,9 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-using System.Collections;
-using System.Collections.Generic;
-
 public class Collectable : MonoBehaviour
 {
     public int lightValue = 1;
@@ -56,13 +53,6 @@ public class Collectable : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-
     // Update is called once per frame
     void Update()
     {
@@ -87,4 +77,3 @@ public class Collectable : MonoBehaviour
         }
     }
 }
-
