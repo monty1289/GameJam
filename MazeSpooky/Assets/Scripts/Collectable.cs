@@ -58,7 +58,7 @@ public class Collectable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Outer Radius: " + light2D.pointLightOuterRadius);
+       // Debug.Log("Outer Radius: " + light2D.pointLightOuterRadius);
         // Decrease the spotlight's inner and outer radius over time
         if (light2D != null)
         {
@@ -74,7 +74,7 @@ public class Collectable : MonoBehaviour
                 // Gradually increase the alpha of the image over time with a slower increment
                 canvasGroup.alpha += alphaIncrement * Time.deltaTime;
 
-                Debug.Log("Image Alpha: " + canvasGroup.alpha);
+                //Debug.Log("Image Alpha: " + canvasGroup.alpha);
             }
         }
     }

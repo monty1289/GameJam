@@ -19,11 +19,6 @@ public class Door : MonoBehaviour
 
     public void OpenDoor() 
     {
-        Debug.Log(GemCount);
-        if (GemCount >= 8)
-        {
-            gameObject.GetComponent<SpriteRenderer>().sprite = doorOpen;
-        }
     }
 
     public void DoorResponse()

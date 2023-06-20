@@ -39,9 +39,10 @@ public class Interact : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        Debug.Log("Trigger");
         if (collision.gameObject.CompareTag("Player"))
         {
+            
            inRange = true;
             interactPopup.SetActive(true);
             
@@ -50,6 +51,7 @@ public class Interact : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        Debug.Log("Exit");
        if (collision.gameObject.CompareTag("Player"))
         {
             inRange = false;
