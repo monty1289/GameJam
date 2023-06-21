@@ -85,7 +85,7 @@ public class Collectable : MonoBehaviour
             if (light2D.pointLightOuterRadius <= activationRadius && canvasGroup.alpha < 1f)
             {
                 // Gradually increase the alpha of the image over time with a slower increment
-                //canvasGroup.alpha += alphaIncrement * Time.deltaTime;
+                // canvasGroup.alpha += alphaIncrement * Time.deltaTime;
                 StartCoroutine(LoadSceneWithDelay("EndGame", 1f));
 
                 //Debug.Log("Image Alpha: " + canvasGroup.alpha);
