@@ -18,7 +18,7 @@ public class Interact : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        inRange = false;
     }
 
     // Update is called once per frame
@@ -30,10 +30,12 @@ public class Interact : MonoBehaviour
             {
                 //fire unity event
                 door.GetComponent<SpriteRenderer>().sprite = doorOpen;
-                
+
             }
             else {
+                Debug.Log(inRange);
                 AudioManager.Instance.Play(clip, player.transform);
+
             }
         }
     }
