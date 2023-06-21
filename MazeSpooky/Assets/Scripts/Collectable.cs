@@ -6,6 +6,7 @@ public class Collectable : MonoBehaviour
     public int lightValue = 1;
     public AudioClip clip;
     public GameObject player;
+    public GameObject door;    
     public GameObject spotlight;
     private float decreaseRate = 0.02f; // Rate at which the spotlight decreases in size per second
     public Image image;
@@ -41,6 +42,7 @@ public class Collectable : MonoBehaviour
         {
             player.GetComponent<PlayerMovement>().lightValue += lightValue;
             AudioManager.Instance.Play(clip, player.transform);
+            door.GetComponent<Door>().GemCount+= 8;
             UnityEngine.Rendering.Universal.Light2D light2D = spotlight.GetComponent<UnityEngine.Rendering.Universal.Light2D>();
 
             if (light2D != null)
@@ -56,7 +58,7 @@ public class Collectable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Outer Radius: " + light2D.pointLightOuterRadius);
+       // Debug.Log("Outer Radius: " + light2D.pointLightOuterRadius);
         // Decrease the spotlight's inner and outer radius over time
         if (light2D != null)
         {
@@ -72,7 +74,7 @@ public class Collectable : MonoBehaviour
                 // Gradually increase the alpha of the image over time with a slower increment
                 canvasGroup.alpha += alphaIncrement * Time.deltaTime;
 
-                Debug.Log("Image Alpha: " + canvasGroup.alpha);
+                //Debug.Log("Image Alpha: " + canvasGroup.alpha);
             }
         }
     }
