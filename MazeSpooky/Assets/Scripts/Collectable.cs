@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Collectable : MonoBehaviour
 {
@@ -8,6 +9,9 @@ public class Collectable : MonoBehaviour
     public GameObject player;
     public GameObject door;    
     public GameObject spotlight;
+    public Transform MaxScore;
+    public int score = 0;
+    public TMP_Text scoreText;
     private float decreaseRate = 0.02f; // Rate at which the spotlight decreases in size per second
     public Image image;
     private float activationRadius = 0.8f;
@@ -34,6 +38,7 @@ public class Collectable : MonoBehaviour
 
         // Set initial alpha to 0
         canvasGroup.alpha = 0f;
+        UpdateScoreText();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -52,6 +57,8 @@ public class Collectable : MonoBehaviour
             }
 
             Destroy(gameObject);
+            score++;
+            UpdateScoreText();
         }
     }
 
@@ -77,5 +84,10 @@ public class Collectable : MonoBehaviour
                 //Debug.Log("Image Alpha: " + canvasGroup.alpha);
             }
         }
+    }
+
+    private void UpdateScoreText()
+    {
+        scoreText.text = "Gems: " + score.ToString() + "/" + MaxScore.childCount.ToString();
     }
 }
