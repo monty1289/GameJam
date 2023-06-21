@@ -3,18 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StartScreen : MonoBehaviour
+public class RestartGame : MonoBehaviour
 {
-     public void ChangeScene()
+    public void ChangeScene()
     {
         SceneManager.LoadScene("Maze");
     }
 
-    public void ExitGame()
+
+    // Update is called once per frame
+    void Update()
     {
         
-        // else
-        Application.Quit();    }
-
-
+    }
 }

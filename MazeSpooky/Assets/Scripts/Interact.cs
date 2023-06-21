@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class Interact : MonoBehaviour
 {
@@ -31,6 +32,10 @@ public class Interact : MonoBehaviour
                 //fire unity event
                 door.GetComponent<SpriteRenderer>().sprite = doorOpen;
 
+                StartCoroutine(LoadSceneWithDelay("EscapeSuccess", 2f));
+
+
+
             }
             else {
                 Debug.Log(inRange);
@@ -59,5 +64,12 @@ public class Interact : MonoBehaviour
             inRange = false;
             interactPopup.SetActive(false);
         }
+    }
+
+    IEnumerator LoadSceneWithDelay(string sceneName, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        SceneManager.LoadScene(sceneName);
     }
 }

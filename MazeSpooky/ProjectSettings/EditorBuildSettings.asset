@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/PlayerMovement.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Maze.unity
     guid: 8e7a38a10b75f4b199b63caf63e74ce8
+  - enabled: 1
+    path: Assets/Scenes/EscapeSuccess.unity
+    guid: 47f9d99f79b7f3e4fb9d78283d3e4e07
+  - enabled: 1
+    path: Assets/Scenes/EndGame.unity
+    guid: 7beccba6560e33b4db02f284e7c0a8a8
   m_configObjects: {}

@@ -1,6 +1,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
+using UnityEngine.Events;
+using System.Collections;
+using System.Collections.Generic;
 
 public class Collectable : MonoBehaviour
 {
@@ -47,7 +51,8 @@ public class Collectable : MonoBehaviour
         {
             player.GetComponent<PlayerMovement>().lightValue += lightValue;
             AudioManager.Instance.Play(clip, player.transform);
-            door.GetComponent<Door>().GemCount+= 8;
+            door.GetComponent<Door>().GemCount+= 1;
+            UpdateScoreText();
             UnityEngine.Rendering.Universal.Light2D light2D = spotlight.GetComponent<UnityEngine.Rendering.Universal.Light2D>();
 
             if (light2D != null)
@@ -58,7 +63,8 @@ public class Collectable : MonoBehaviour
 
             Destroy(gameObject);
             score++;
-            UpdateScoreText();
+            Debug.Log(score);
+            //UpdateScoreText();
         }
     }
 
@@ -79,15 +85,24 @@ public class Collectable : MonoBehaviour
             if (light2D.pointLightOuterRadius <= activationRadius && canvasGroup.alpha < 1f)
             {
                 // Gradually increase the alpha of the image over time with a slower increment
-                canvasGroup.alpha += alphaIncrement * Time.deltaTime;
+                //canvasGroup.alpha += alphaIncrement * Time.deltaTime;
+                StartCoroutine(LoadSceneWithDelay("EndGame", 1f));
 
                 //Debug.Log("Image Alpha: " + canvasGroup.alpha);
             }
         }
     }
 
+    
+
     private void UpdateScoreText()
     {
-        scoreText.text = "Gems: " + score.ToString() + "/" + MaxScore.childCount.ToString();
+        scoreText.text = "Gems: " + door.GetComponent<Door>().GemCount.ToString() + "/8";
+    }
+    IEnumerator LoadSceneWithDelay(string sceneName, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        SceneManager.LoadScene(sceneName);
     }
 }
